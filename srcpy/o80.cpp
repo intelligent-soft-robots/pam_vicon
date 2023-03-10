@@ -13,7 +13,7 @@
 #include <o80/pybind11_helper.hpp>
 #include <serialization_utils/cereal_json.hpp>
 
-#include <pam_vicon/pam_vicon.hpp>
+#include <pam_vicon/o80.hpp>
 
 PYBIND11_MODULE(pam_vicon, m)
 {
