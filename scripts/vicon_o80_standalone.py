@@ -20,7 +20,7 @@ from vicon_transformer.vicon_transformer_bindings import (
     ViconReceiverConfig,
     to_json,
 )
-from vicon_transformer.pam_vicon_o80 import (
+from pam_vicon.o80 import (
     start_standalone,
     stop_standalone,
 )

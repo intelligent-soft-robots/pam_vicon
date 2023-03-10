@@ -13,7 +13,7 @@ import typing
 
 import signal_handler
 
-from vicon_transformer.pam_vicon_o80 import (
+from pam_vicon.o80 import (
     FrontEnd,
     FixedSizeViconFrame,
     Subjects,

@@ -16,13 +16,14 @@ import typing as t
 import numpy as np
 
 from spatial_transformation import Transformation
-import pam_vicon_o80.pam_vicon
 from vicon_transformer import (
     PlaybackReceiver,
     ViconReceiverConfig,
     ViconReceiver,
     ViconTransformer,
 )
+
+import pam_vicon
 
 if t.TYPE_CHECKING:
     from vicon_transformer.vicon_transformer_bindings import Receiver
@@ -64,7 +65,7 @@ def get_table_transform(transformer: ViconTransformer) -> Transformation:
     ]
     corner_positions_world = [c.translation for c in corner_poses_world]
 
-    return pam_vicon_o80.pam_vicon.get_table_pose(corner_positions_world)
+    return pam_vicon.get_table_pose(corner_positions_world)
 
 
 def main() -> int:
