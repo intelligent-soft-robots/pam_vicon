@@ -13,28 +13,28 @@
 #include <o80/pybind11_helper.hpp>
 #include <serialization_utils/cereal_json.hpp>
 
-#include <pam_vicon/pam_vicon_o80.hpp>
+#include <pam_vicon/pam_vicon.hpp>
 
-PYBIND11_MODULE(pam_vicon_o80, m)
+PYBIND11_MODULE(pam_vicon, m)
 {
     namespace py = pybind11;
 
     py::module::import("vicon_transformer");
 
-    py::class_<pam_vicon_o80::FixedSizeViconFrame>(m, "FixedSizeViconFrame")
+    py::class_<pam_vicon::FixedSizeViconFrame>(m, "FixedSizeViconFrame")
         .def(py::init<>())
         .def_readwrite("frame_number",
-                       &pam_vicon_o80::FixedSizeViconFrame::frame_number)
+                       &pam_vicon::FixedSizeViconFrame::frame_number)
         .def_readwrite("frame_rate",
-                       &pam_vicon_o80::FixedSizeViconFrame::frame_rate)
-        .def_readwrite("latency", &pam_vicon_o80::FixedSizeViconFrame::latency)
+                       &pam_vicon::FixedSizeViconFrame::frame_rate)
+        .def_readwrite("latency", &pam_vicon::FixedSizeViconFrame::latency)
         .def_readwrite("time_stamp",
-                       &pam_vicon_o80::FixedSizeViconFrame::time_stamp)
+                       &pam_vicon::FixedSizeViconFrame::time_stamp)
         .def_readwrite("subjects",
-                       &pam_vicon_o80::FixedSizeViconFrame::subjects)
+                       &pam_vicon::FixedSizeViconFrame::subjects)
         .def(
             "__str__",
-            [](const pam_vicon_o80::FixedSizeViconFrame& vf)
+            [](const pam_vicon::FixedSizeViconFrame& vf)
             {
                 std::stringstream stream;
                 stream << vf;
@@ -42,31 +42,31 @@ PYBIND11_MODULE(pam_vicon_o80, m)
             },
             py::call_guard<py::gil_scoped_release>());
     m.def("to_json",
-          &serialization_utils::to_json<pam_vicon_o80::FixedSizeViconFrame>);
+          &serialization_utils::to_json<pam_vicon::FixedSizeViconFrame>);
     m.def("from_json",
-          &serialization_utils::from_json<pam_vicon_o80::FixedSizeViconFrame>);
+          &serialization_utils::from_json<pam_vicon::FixedSizeViconFrame>);
 
-    py::enum_<pam_vicon_o80::Subjects>(m, "Subjects")
-        .value("BALL_LAUNCHER", pam_vicon_o80::Subjects::BALL_LAUNCHER)
-        .value("PING_BASE", pam_vicon_o80::Subjects::PING_BASE)
-        .value("ARM", pam_vicon_o80::Subjects::ARM)
-        .value("TABLE_CORNER_1", pam_vicon_o80::Subjects::TABLE_CORNER_1)
-        .value("TABLE_CORNER_2", pam_vicon_o80::Subjects::TABLE_CORNER_2)
-        .value("TABLE_CORNER_3", pam_vicon_o80::Subjects::TABLE_CORNER_3)
-        .value("TABLE_CORNER_4", pam_vicon_o80::Subjects::TABLE_CORNER_4)
-        .value("LED_STICK", pam_vicon_o80::Subjects::LED_STICK)
-        .value("MUSCLE_BASE", pam_vicon_o80::Subjects::MUSCLE_BASE)
-        .value("MUSCLE_RACKET", pam_vicon_o80::Subjects::MUSCLE_RACKET);
+    py::enum_<pam_vicon::Subjects>(m, "Subjects")
+        .value("BALL_LAUNCHER", pam_vicon::Subjects::BALL_LAUNCHER)
+        .value("PING_BASE", pam_vicon::Subjects::PING_BASE)
+        .value("ARM", pam_vicon::Subjects::ARM)
+        .value("TABLE_CORNER_1", pam_vicon::Subjects::TABLE_CORNER_1)
+        .value("TABLE_CORNER_2", pam_vicon::Subjects::TABLE_CORNER_2)
+        .value("TABLE_CORNER_3", pam_vicon::Subjects::TABLE_CORNER_3)
+        .value("TABLE_CORNER_4", pam_vicon::Subjects::TABLE_CORNER_4)
+        .value("LED_STICK", pam_vicon::Subjects::LED_STICK)
+        .value("MUSCLE_BASE", pam_vicon::Subjects::MUSCLE_BASE)
+        .value("MUSCLE_RACKET", pam_vicon::Subjects::MUSCLE_RACKET);
 
     m.def("map_subject_name_to_index",
-          &pam_vicon_o80::map_subject_name_to_index);
-    m.def("get_subject_names", &pam_vicon_o80::get_subject_names);
+          &pam_vicon::map_subject_name_to_index);
+    m.def("get_subject_names", &pam_vicon::get_subject_names);
 
-    o80::create_python_bindings<pam_vicon_o80::o80Standalone,
+    o80::create_python_bindings<pam_vicon::o80Standalone,
                                 o80::NO_EXTENDED_STATE>(m);
     o80::create_standalone_python_bindings<
-        pam_vicon_o80::o80Driver,
-        pam_vicon_o80::o80Standalone,
+        pam_vicon::o80Driver,
+        pam_vicon::o80Standalone,
         // argument for the driver
         std::shared_ptr<vicon_transformer::Receiver>,
         // argument for the driver (origin subject name)

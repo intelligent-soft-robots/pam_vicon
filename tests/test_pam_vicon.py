@@ -10,12 +10,12 @@ import o80
 from vicon_transformer.vicon_transformer_bindings import (
     JsonReceiver,
 )
-from vicon_transformer.pam_vicon_o80 import (
+from vicon_transformer.pam_vicon import (
     start_standalone,
     stop_standalone,
 )
 
-from pam_vicon_o80 import pam_vicon
+from pam_vicon import pam_vicon
 
 
 TABLE_LENGTH = 2.740

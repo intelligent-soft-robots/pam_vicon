@@ -37,7 +37,7 @@ import tqdm
 
 import signal_handler
 import tennicam_client
-from vicon_transformer import pam_vicon_o80
+from vicon_transformer import pam_vicon
 
 
 class JsonEncoder(json.JSONEncoder):
@@ -101,7 +101,7 @@ def main() -> int:
     logging.debug("Recording rate: %f seconds", args.rate)
 
     tennicam_frontend = tennicam_client.FrontEnd(args.tennicam_segment_id)
-    vicon_frontend = pam_vicon_o80.FrontEnd(args.vicon_segment_id)
+    vicon_frontend = pam_vicon.FrontEnd(args.vicon_segment_id)
 
     data = []
     signal_handler.init()  # for detecting ctrl+c
@@ -132,7 +132,7 @@ def main() -> int:
             obs_vicon = vicon_frontend.latest()
 
             vicon_frame = obs_vicon.get_extended_state()
-            led_stick = vicon_frame.subjects[pam_vicon_o80.Subjects.LED_STICK]
+            led_stick = vicon_frame.subjects[pam_vicon.Subjects.LED_STICK]
 
             if obs_tennicam.get_ball_id() < 0:
                 logging.error("No ball detected.  Skip frame.")

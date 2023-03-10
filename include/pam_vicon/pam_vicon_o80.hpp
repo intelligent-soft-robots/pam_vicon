@@ -16,7 +16,7 @@
 #include <vicon_transformer/o80_driver.hpp>
 #include <vicon_transformer/o80_standalone.hpp>
 
-namespace pam_vicon_o80
+namespace pam_vicon
 {
 //! Number of subjects in the PAM Vicon setup.
 constexpr std::size_t NUM_SUBJECTS = 10;
@@ -110,4 +110,4 @@ typedef vicon_transformer::o80Driver<NUM_SUBJECTS, map_subject_name_to_index>
 //! o80Standalone for the PAM Vicon setup
 typedef vicon_transformer::o80Standalone<o80Driver> o80Standalone;
 
-}  // namespace pam_vicon_o80
+}  // namespace pam_vicon
