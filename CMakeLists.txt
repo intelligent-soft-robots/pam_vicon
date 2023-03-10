@@ -76,6 +76,8 @@ install(
 
 install_scripts(
     scripts/record_tennicam_vicon_trajectory.py
+    scripts/vicon_o80_print_data.py
+    scripts/vicon_o80_standalone.py
 
     DESTINATION bin
 )
