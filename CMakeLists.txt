@@ -92,6 +92,8 @@ if(BUILD_TESTING)
     # pybind11 modules will be missing.
     ament_add_pytest_test(test_pam_vicon_py tests/test_pam_vicon.py
         WORKING_DIRECTORY /tmp)
+    ament_add_pytest_test(test_o80_py tests/test_o80.py
+        WORKING_DIRECTORY /tmp)
 
 endif()
 
