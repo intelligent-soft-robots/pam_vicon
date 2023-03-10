@@ -10,7 +10,7 @@ import o80
 from vicon_transformer.vicon_transformer_bindings import (
     JsonReceiver,
 )
-from vicon_transformer.pam_vicon import (
+from pam_vicon.o80 import (
     start_standalone,
     stop_standalone,
 )

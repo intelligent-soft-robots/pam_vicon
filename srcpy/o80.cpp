@@ -15,7 +15,7 @@
 
 #include <pam_vicon/o80.hpp>
 
-PYBIND11_MODULE(pam_vicon, m)
+PYBIND11_MODULE(o80, m)
 {
     namespace py = pybind11;
 

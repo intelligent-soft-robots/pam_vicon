@@ -6,10 +6,10 @@ import typing as t
 import numpy as np
 from scipy.spatial.transform import Rotation
 
-from vicon_transformer import pam_vicon, SubjectNotVisibleError, SubjectData
+from vicon_transformer import SubjectNotVisibleError, SubjectData
 from spatial_transformation import Transformation
 
-from vicon_transformer.pam_vicon import get_subject_names, Subjects
+import pam_vicon.o80
 
 
 class NoFrameDataError(RuntimeError):
@@ -105,12 +105,12 @@ def get_table_pose(
 class PamVicon:
     """Wrapper around o80 FrontEnd to more easily access PAM Vicon data."""
 
-    ROBOT_BASE_SUBJECT = pam_vicon.Subjects.MUSCLE_BASE
+    ROBOT_BASE_SUBJECT = pam_vicon.o80.Subjects.MUSCLE_BASE
     TABLE_CORNER_SUBJECTS = (
-        pam_vicon.Subjects.TABLE_CORNER_1,
-        pam_vicon.Subjects.TABLE_CORNER_2,
-        pam_vicon.Subjects.TABLE_CORNER_3,
-        pam_vicon.Subjects.TABLE_CORNER_4,
+        pam_vicon.o80.Subjects.TABLE_CORNER_1,
+        pam_vicon.o80.Subjects.TABLE_CORNER_2,
+        pam_vicon.o80.Subjects.TABLE_CORNER_3,
+        pam_vicon.o80.Subjects.TABLE_CORNER_4,
     )
 
     def __init__(self, segment_id: str) -> None:
@@ -118,21 +118,21 @@ class PamVicon:
         Args:
             segment_id: Shared memory segment ID used by the o80 back end.
         """
-        self.frontend = pam_vicon.FrontEnd(segment_id)
-        self._frame: t.Optional[pam_vicon.FixedSizeViconFrame] = None
+        self.frontend = pam_vicon.o80.FrontEnd(segment_id)
+        self._frame: t.Optional[pam_vicon.o80.FixedSizeViconFrame] = None
 
     def update(self) -> None:
         """Update with latest Vicon data."""
         self._frame = self.frontend.latest().get_extended_state()
 
-    def _get_subject(self, index: Subjects) -> SubjectData:
+    def _get_subject(self, index: pam_vicon.o80.Subjects) -> SubjectData:
         if self._frame is None:
             raise NoFrameDataError
 
         subject_data = self._frame.subjects[index]
 
         if not subject_data.is_visible:
-            raise SubjectNotVisibleError(get_subject_names()[index])
+            raise SubjectNotVisibleError(pam_vicon.o80.get_subject_names()[index])
 
         return subject_data
 
