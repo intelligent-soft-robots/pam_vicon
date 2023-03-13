@@ -5,14 +5,15 @@ Installation
 Dependencies
 ============
 
-This package depends on a CMake-wrapped version of the Vicon Datastream SDK, which is
-avialable `on GitHub
-<https://github.com/intelligent-soft-robots/vicon-datastream-sdk>`_). For further
-dependencies, see the ``find_package``-section in ``CMakeLists.txt``.
+This package depends on a number of third-party libraries (some of us and some
+third party), see the ``find_package``-section in ``CMakeLists.txt``.
 
-We also provide an Apptainer_ image ("pam_base") which contains all required
-dependencies, so you don't need to install everything on your computer.
-See pam_singularity_.
+We provide an Apptainer_ image ("pam_base") which contains all required
+third-party dependencies, so you don't need to install everything on your
+computer. See pam_singularity_.
+
+Our internal dependencies are best provided by setting up a workspace using
+treep_ (see below).
 
 
 Build
@@ -46,8 +47,6 @@ Build with Apptainer:
 If you don't want to use Apptainer, simply call ``colcon build`` directly.  In this case,
 you need to install all dependencies locally (see
 :doc:`pam_documentation:A1_overview_and_installation`).
-
-.. (see [PAM documentation](https://intelligent-soft-robots.github.io/pam_documentation/A1_overview_and_installation.html#dependencies-and-configuration-folder)).
 
 
 .. _Apptainer: https://apptainer.org

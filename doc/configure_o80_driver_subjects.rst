@@ -8,7 +8,7 @@ While the :cpp:class:`vicon_transformer::ViconFrame` instances returned by
 :cpp:class:`vicon_transformer::ViconReceiver` contain a variable-sized map with all
 subjects that are reported by the Vicon Tracker software, this is can unfortunately not
 be used with o80 as the inter-process communication via shared memory requires that data
-types are of fixed size.  This does not work go with a variable amount of subjects, each
+types are of fixed size.  This does not work with a variable amount of subjects, each
 having a name of variable length.
 
 Instead, the o80 driver provides the data as
@@ -18,7 +18,7 @@ Instead, the o80 driver provides the data as
 2. Subject names are not included in the data structure.  Instead, their poses are given
    in an array in an order that has to be specified at compile time.
 
-In practice this is done by defining an enum :cpp:enum:`pam_vicon_o80::Subjects` whose
+In practice this is done by defining an enum :cpp:enum:`pam_vicon::Subjects` whose
 values serve as indices for the subject array.  That is, to get the data of the robot
 base subject, use code like this (using Python bindings, corresponding C++ code will
 look similar):
@@ -31,7 +31,7 @@ look similar):
 
 
 This means, however, that if something changes in the Vicon configuration (e.g. subjects
-are added or removed or their name is changed), the code in ``pam_vicon_o80.hpp`` has to
+are added or removed or their name is changed), the code in ``o80.hpp`` has to
 be updated accordingly.  More specifically, the following changes need to be made:
 
 - ``NUM_SUBJECTS``:  This constant specifies the number of subjects.
