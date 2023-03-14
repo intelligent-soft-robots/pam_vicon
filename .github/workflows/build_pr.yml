@@ -35,7 +35,7 @@ jobs:
         shell: bash
         run: |
           pkg_name=${GITHUB_REPOSITORY#*/}
-          echo apptainer run ${{ inputs.container }} bcat -o ${{ inputs.build_dir }} -p . --python-dir install/${pkg_name}/lib/python3.8/site-packages/${pkg_name}
+          echo apptainer run container.sif bcat -o ${{ inputs.build_dir }} -p . --python-dir install/${pkg_name}/lib/python3.8/site-packages/${pkg_name}
   
           apptainer run ${{ inputs.container }} bcat -o ${{ inputs.build_dir }} -p . --python-dir install/${pkg_name}/lib/python3.8/site-packages/${pkg_name}
   
