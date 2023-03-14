@@ -40,20 +40,21 @@ convention = "google"
 
 
 [[tool.mypy.overrides]]
-# FIXME revise list of packages
+# ignore errors in modules with *.pyi file.
 module = [
-    "geometry_msgs.*",
-    "matplotlib.*",
+    "pam_vicon.o80",
+]
+ignore_errors = true
+
+
+[[tool.mypy.overrides]]
+module = [
     "o80",
-    "rclpy.*",
     "scipy.*",
     "signal_handler",
+    "spatial_transformation",
     "tennicam_client",
-    "tf2_ros.*",
-    "vicon_dssdk",
-    "vicon_transformer.vicon_transformer_bindings",
-    "pam_vicon.o80",
-    "zmq",
+    "vicon_transformer.*",
 ]
 ignore_missing_imports = true
 
