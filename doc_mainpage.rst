@@ -30,7 +30,7 @@ PamVicon: Wrapper around o80 FrontEnd
 For the client side, :class:`pam_vicon.PamVicon` is a convenience wrapper around
 :class:`pam_vicon.o80.FrontEnd` that provides methods to directly get the robot and
 table pose.
-For an usage example see :ref:`example_PamVicon`.
+For an usage example see :ref:`example_pamvicon`.
 
 
 Calibrate Transformation between Tennicam and Vicon

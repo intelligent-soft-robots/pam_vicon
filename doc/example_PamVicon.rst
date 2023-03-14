@@ -1,8 +1,8 @@
-.. _example_PamVicon:
+.. _example_pamvicon:
 
-********************************************
-Examples: Access Vicon Data Through PamVicon
-********************************************
+*******************************************
+Example: Access Vicon Data Through PamVicon
+*******************************************
 
 :class:`~pam_vicon.PamVicon` is a wrapper around the o80 front end, which makes
 accessing the relevant information for our table tennis setup easier.
