@@ -30,8 +30,7 @@ PYBIND11_MODULE(o80, m)
         .def_readwrite("latency", &pam_vicon::FixedSizeViconFrame::latency)
         .def_readwrite("time_stamp",
                        &pam_vicon::FixedSizeViconFrame::time_stamp)
-        .def_readwrite("subjects",
-                       &pam_vicon::FixedSizeViconFrame::subjects)
+        .def_readwrite("subjects", &pam_vicon::FixedSizeViconFrame::subjects)
         .def(
             "__str__",
             [](const pam_vicon::FixedSizeViconFrame& vf)
@@ -58,8 +57,7 @@ PYBIND11_MODULE(o80, m)
         .value("MUSCLE_BASE", pam_vicon::Subjects::MUSCLE_BASE)
         .value("MUSCLE_RACKET", pam_vicon::Subjects::MUSCLE_RACKET);
 
-    m.def("map_subject_name_to_index",
-          &pam_vicon::map_subject_name_to_index);
+    m.def("map_subject_name_to_index", &pam_vicon::map_subject_name_to_index);
     m.def("get_subject_names", &pam_vicon::get_subject_names);
 
     o80::create_python_bindings<pam_vicon::o80Standalone,
