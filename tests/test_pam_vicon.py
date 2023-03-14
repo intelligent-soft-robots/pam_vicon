@@ -15,7 +15,7 @@ from pam_vicon.o80 import (
     stop_standalone,
 )
 
-from pam_vicon import pam_vicon
+import pam_vicon._pam_vicon as pam_vicon
 
 
 TABLE_LENGTH = 2.740

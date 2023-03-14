@@ -105,8 +105,8 @@ def get_table_pose(
 class PamVicon:
     """Wrapper around o80 FrontEnd to more easily access PAM Vicon data."""
 
-    ROBOT_BASE_SUBJECT = pam_vicon.o80.Subjects.MUSCLE_BASE
-    TABLE_CORNER_SUBJECTS = (
+    _ROBOT_BASE_SUBJECT = pam_vicon.o80.Subjects.MUSCLE_BASE
+    _TABLE_CORNER_SUBJECTS = (
         pam_vicon.o80.Subjects.TABLE_CORNER_1,
         pam_vicon.o80.Subjects.TABLE_CORNER_2,
         pam_vicon.o80.Subjects.TABLE_CORNER_3,
@@ -144,7 +144,7 @@ class PamVicon:
                 (i.e. assume that the table is flat on the ground).
         """
         corner_poses_world = [
-            self._get_subject(sub).global_pose for sub in self.TABLE_CORNER_SUBJECTS
+            self._get_subject(sub).global_pose for sub in self._TABLE_CORNER_SUBJECTS
         ]
         corner_positions_world = [c.translation for c in corner_poses_world]
 
@@ -152,5 +152,5 @@ class PamVicon:
 
     def get_robot_pose(self) -> Transformation:
         """Get pose of the robot base."""
-        pose = self._get_subject(self.ROBOT_BASE_SUBJECT).global_pose
+        pose = self._get_subject(self._ROBOT_BASE_SUBJECT).global_pose
         return Transformation.from_cpp(pose)
