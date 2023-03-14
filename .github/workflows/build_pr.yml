@@ -37,7 +37,7 @@ jobs:
           pkg_name=${GITHUB_REPOSITORY#*/}
           echo apptainer run container.sif bcat -o docbuild -p . --python-dir install/${pkg_name}/lib/python3.8/site-packages/${pkg_name}
   
-          . setup.bash
+          . install/setup.bash
           apptainer run container.sif bcat -o docbuild -p . --python-dir install/${pkg_name}/lib/python3.8/site-packages/${pkg_name}
   
       - name: Upload documentation artifact
