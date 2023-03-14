@@ -48,19 +48,13 @@ ignore_errors = true
 
 
 [[tool.mypy.overrides]]
-# FIXME revise list of packages
 module = [
-    "geometry_msgs.*",
-    "matplotlib.*",
     "o80",
-    "rclpy.*",
     "scipy.*",
     "signal_handler",
+    "spatial_transformation",
     "tennicam_client",
-    "tf2_ros.*",
-    "vicon_dssdk",
-    "vicon_transformer.vicon_transformer_bindings",
-    "zmq",
+    "vicon_transformer.*",
 ]
 ignore_missing_imports = true
 
