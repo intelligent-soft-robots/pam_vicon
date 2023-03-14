@@ -19,9 +19,18 @@ objects in the ISR table tennis lab:
 - :cpp:class:`~pam_vicon::o80Standalone`
 
 Python bindings are provided in :mod:`pam_vicon.o80`.
-For a usage example see :ref:`example_o80_client`.
+For an usage example see :ref:`example_o80_client`.
 
 If you want to modify Vicon objects, see :ref:`configure_subjects_o80`.
+
+
+PamVicon: Wrapper around o80 FrontEnd
+-------------------------------------
+
+For the client side, :class:`pam_vicon.PamVicon` is a convenience wrapper around
+:class:`pam_vicon.o80.FrontEnd` that provides methods to directly get the robot and
+table pose.
+For an usage example see :ref:`example_PamVicon`.
 
 
 Calibrate Transformation between Tennicam and Vicon
