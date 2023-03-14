@@ -30,5 +30,19 @@ jobs:
       - name: list install dir
         run: |
           tree install
+
+      - name: Build documentation
+        shell: bash
+        run: |
+          pkg_name=${GITHUB_REPOSITORY#*/}
+          echo apptainer run ${{ inputs.container }} bcat -o ${{ inputs.build_dir }} -p . --python-dir install/${pkg_name}/lib/python3.8/site-packages/${pkg_name}
+  
+          apptainer run ${{ inputs.container }} bcat -o ${{ inputs.build_dir }} -p . --python-dir install/${pkg_name}/lib/python3.8/site-packages/${pkg_name}
+  
+      - name: Upload documentation artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ${{ inputs.build_dir }}/html
+
       - name: Tests
         uses: open-dynamic-robot-initiative/trifinger-build-action/run_tests@v2
