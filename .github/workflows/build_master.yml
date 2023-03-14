@@ -14,6 +14,7 @@ on:
   push:
     branches:
      - master
+  pull_request:
 
 jobs:
   build_and_test:
@@ -43,7 +44,7 @@ jobs:
 
       - name: Documentation
         id: doc
-        uses: open-dynamic-robot-initiative/trifinger-build-action/build_and_deploy_docs@v2
+        uses: open-dynamic-robot-initiative/trifinger-build-action/build_and_deploy_docs@master
 
       - name: Tests
         uses: open-dynamic-robot-initiative/trifinger-build-action/run_tests@v2
