@@ -90,7 +90,7 @@ def main() -> int:
     logging.info("Starting o80 standalone with frequency %f Hz.", args.frequency)
 
     start_standalone(
-        args.segment_id, args.frequency, args.burst, receiver, "rll_ping_base"
+        args.segment_id, args.frequency, args.burst, receiver, "Pamy_ceiling"
     )
 
     logging.info("Running, Ctrl+C for exiting")

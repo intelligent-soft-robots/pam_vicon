@@ -43,13 +43,13 @@ enum Subjects
 
 //! Maps subject name to @ref Subjects entry.
 const std::map<std::string, size_t> _subject_name_to_index = {
-    {"rll_ping_base", PING_BASE},
-    {"Marker Ballmaschine", BALL_LAUNCHER},
+    {"Pamy_ceiling", PING_BASE},
+    {"Marker Ballmaschine", BALL_LAUNCHER},  // TODO
     {"Marker_Arm", ARM},
-    {"TT Platte_Eckteil 1", TABLE_CORNER_1},
-    {"TT Platte_Eckteil 2", TABLE_CORNER_2},
-    {"TT Platte_Eckteil 3", TABLE_CORNER_3},
-    {"TT Platte_Eckteil 4", TABLE_CORNER_4},
+    {"Eckteil 1", TABLE_CORNER_1},
+    {"Eckteil 2", TABLE_CORNER_2},
+    {"Eckteil 3", TABLE_CORNER_3},
+    {"Eckteil 4", TABLE_CORNER_4},
     {"rll_led_stick", LED_STICK},
     {"rll_muscle_base", MUSCLE_BASE},
     {"rll_muscle_racket", MUSCLE_RACKET},

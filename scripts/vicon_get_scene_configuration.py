@@ -29,13 +29,13 @@ if t.TYPE_CHECKING:
     from vicon_transformer.vicon_transformer_bindings import Receiver
 
 
-ROBOT_BASE_SUBJECT = "rll_muscle_base"
+ROBOT_BASE_SUBJECT = "Pamy_ceiling"
 BALL_MACHINE_SUBJECT = "Ballmaschine Frontmarker"
 TABLE_CORNER_SUBJECTS = (
-    "TT Platte_Eckteil 1",
-    "TT Platte_Eckteil 2",
-    "TT Platte_Eckteil 3",
-    "TT Platte_Eckteil 4",
+    "Eckteil 1",
+    "Eckteil 2",
+    "Eckteil 3",
+    "Eckteil 4",
 )
 
 
