@@ -78,3 +78,13 @@ Example:
         {"rll_led_stick", LED_STICK},
         {"rll_muscle_base", MUSCLE_BASE},
     };
+
+
+
+**************
+Origin Subject
+**************
+
+The name of the default origin subject is given by
+:attr:`pam_vicon.DEFAULT_ORIGIN_SUBJECT`, which is set in ``pam_vicon/__init__.py`` and
+should be updated there, if the name of the origin subject used in the lab changes.
