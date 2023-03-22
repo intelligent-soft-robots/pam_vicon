@@ -24,18 +24,20 @@ from vicon_transformer import (
 )
 
 import pam_vicon
+from pam_vicon.o80 import Subjects, get_subject_names
 
 if t.TYPE_CHECKING:
     from vicon_transformer.vicon_transformer_bindings import Receiver
 
+_subject_names = get_subject_names()
 
-ROBOT_BASE_SUBJECT = "Pamy_ceiling"
-BALL_MACHINE_SUBJECT = "Ballmaschine Frontmarker"
+ROBOT_BASE_SUBJECT = _subject_names[Subjects.MUSCLE_BASE]
+BALL_MACHINE_SUBJECT = _subject_names[Subjects.BALL_LAUNCHER]
 TABLE_CORNER_SUBJECTS = (
-    "Eckteil 1",
-    "Eckteil 2",
-    "Eckteil 3",
-    "Eckteil 4",
+    _subject_names[Subjects.TABLE_CORNER_1],
+    _subject_names[Subjects.TABLE_CORNER_2],
+    _subject_names[Subjects.TABLE_CORNER_3],
+    _subject_names[Subjects.TABLE_CORNER_4],
 )
 
 
@@ -80,7 +82,7 @@ def main() -> int:
         "--origin-subject",
         "-o",
         type=str,
-        default="rll_ping_base",
+        default=pam_vicon.DEFAULT_ORIGIN_SUBJECT,
         help="Name of the origin marker (used as origin for the world frame).",
     )
     args = parser.parse_args()
