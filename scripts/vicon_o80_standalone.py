@@ -20,6 +20,7 @@ from vicon_transformer.vicon_transformer_bindings import (
     ViconReceiverConfig,
     to_json,
 )
+import pam_vicon
 from pam_vicon.o80 import (
     start_standalone,
     stop_standalone,
@@ -68,6 +69,14 @@ def main() -> int:
             frame data but without actual data (saves bandwidth).
         """,
     )
+    parser.add_argument(
+        "--origin-subject",
+        type=str,
+        default=pam_vicon.DEFAULT_ORIGIN_SUBJECT,
+        help="""Name of the origin subject.  Poses of all subjects are given relative to
+            the origin subject.  Default: %(default)s
+        """,
+    )
 
     args = parser.parse_args()
 
@@ -90,7 +99,7 @@ def main() -> int:
     logging.info("Starting o80 standalone with frequency %f Hz.", args.frequency)
 
     start_standalone(
-        args.segment_id, args.frequency, args.burst, receiver, "Pamy_ceiling"
+        args.segment_id, args.frequency, args.burst, receiver, args.origin_subject
     )
 
     logging.info("Running, Ctrl+C for exiting")
