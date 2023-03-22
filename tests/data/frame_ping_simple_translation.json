@@ -85,7 +85,7 @@
             }
         },
         {
-            "key": "rll_ping_base",
+            "key": "Pamy_ceiling",
             "value": {
                 "quality": 0.6279561076715078,
                 "is_visible": true,
@@ -101,7 +101,7 @@
             }
         },
         {
-            "key": "TT Platte_Eckteil 1",
+            "key": "Eckteil 1",
             "value": {
                 "quality": 0.9720594223676619,
                 "is_visible": true,
@@ -117,7 +117,7 @@
             }
         },
         {
-            "key": "TT Platte_Eckteil 2",
+            "key": "Eckteil 2",
             "value": {
                 "quality": 0.9818305031583008,
                 "is_visible": true,
@@ -133,7 +133,7 @@
             }
         },
         {
-            "key": "TT Platte_Eckteil 3",
+            "key": "Eckteil 3",
             "value": {
                 "quality": 1.2411929718985313,
                 "is_visible": true,
@@ -149,7 +149,7 @@
             }
         },
         {
-            "key": "TT Platte_Eckteil 4",
+            "key": "Eckteil 4",
             "value": {
                 "quality": 0.7868089992357509,
                 "is_visible": true,

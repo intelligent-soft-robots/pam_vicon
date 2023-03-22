@@ -10,6 +10,8 @@ import o80
 from vicon_transformer.vicon_transformer_bindings import (
     JsonReceiver,
 )
+
+import pam_vicon
 from pam_vicon.o80 import (
     FrontEnd,
     Subjects,
@@ -18,7 +20,6 @@ from pam_vicon.o80 import (
 )
 
 SEGMENT_ID = "test_vicon"
-ORIGIN_SUBJECT = "rll_ping_base"
 
 
 @pytest.fixture()
@@ -35,7 +36,9 @@ def _standalone(test_data):
     o80.clear_shared_memory(SEGMENT_ID)
     frequency = 10
     burst = False
-    start_standalone(SEGMENT_ID, frequency, burst, receiver, ORIGIN_SUBJECT)
+    start_standalone(
+        SEGMENT_ID, frequency, burst, receiver, pam_vicon.DEFAULT_ORIGIN_SUBJECT
+    )
 
     yield
 

@@ -15,13 +15,12 @@ from pam_vicon.o80 import (
     stop_standalone,
 )
 
-import pam_vicon._pam_vicon as pam_vicon
+import pam_vicon
 
 
 TABLE_LENGTH = 2.740
 TABLE_WIDTH = 1.525
 SEGMENT_ID = "test_vicon"
-ORIGIN_SUBJECT = "rll_ping_base"
 
 
 @pytest.fixture()
@@ -38,7 +37,9 @@ def _standalone(test_data):
     o80.clear_shared_memory(SEGMENT_ID)
     frequency = 10
     burst = False
-    start_standalone(SEGMENT_ID, frequency, burst, receiver, ORIGIN_SUBJECT)
+    start_standalone(
+        SEGMENT_ID, frequency, burst, receiver, pam_vicon.DEFAULT_ORIGIN_SUBJECT
+    )
 
     yield
 
