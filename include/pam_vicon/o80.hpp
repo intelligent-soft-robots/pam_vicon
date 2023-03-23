@@ -46,7 +46,7 @@ enum Subjects
 const std::map<std::string, size_t> _subject_name_to_index = {
     {"Pamy_ceiling", Subjects::PING_BASE},
     {"Ballmaschine Frontmarker", Subjects::BALL_LAUNCHER_FRONT},
-    {"Abschusskopf Marker v2", Subjects::BALL_LAUNCHER_HEAD},
+    {"Abschusskopf Marker", Subjects::BALL_LAUNCHER_HEAD},
     {"Eckteil 1", Subjects::TABLE_CORNER_1},
     {"Eckteil 2", Subjects::TABLE_CORNER_2},
     {"Eckteil 3", Subjects::TABLE_CORNER_3},
