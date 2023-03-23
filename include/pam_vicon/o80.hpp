@@ -19,7 +19,7 @@
 namespace pam_vicon
 {
 //! Number of subjects in the PAM Vicon setup.
-constexpr std::size_t NUM_SUBJECTS = 10;
+constexpr std::size_t NUM_SUBJECTS = 11;
 
 /**
  * @brief Enumeration of Vicon subjects.
@@ -30,29 +30,31 @@ constexpr std::size_t NUM_SUBJECTS = 10;
 enum Subjects
 {
     PING_BASE = 0,
-    BALL_LAUNCHER,
-    ARM,
+    BALL_LAUNCHER_FRONT,
+    BALL_LAUNCHER_HEAD,
     TABLE_CORNER_1,
     TABLE_CORNER_2,
     TABLE_CORNER_3,
     TABLE_CORNER_4,
     LED_STICK,
-    MUSCLE_BASE,
-    MUSCLE_RACKET
+    ROBOT1_BASE,
+    ROBOT1_UPPER_ARM,
+    ROBOT1_RACKET
 };
 
 //! Maps subject name to @ref Subjects entry.
 const std::map<std::string, size_t> _subject_name_to_index = {
-    {"Pamy_ceiling", PING_BASE},
-    {"Marker Ballmaschine", BALL_LAUNCHER},  // TODO
-    {"Marker_Arm", ARM},
-    {"Eckteil 1", TABLE_CORNER_1},
-    {"Eckteil 2", TABLE_CORNER_2},
-    {"Eckteil 3", TABLE_CORNER_3},
-    {"Eckteil 4", TABLE_CORNER_4},
-    {"rll_led_stick", LED_STICK},
-    {"rll_muscle_base", MUSCLE_BASE},
-    {"rll_muscle_racket", MUSCLE_RACKET},
+    {"Pamy_ceiling", Subjects::PING_BASE},
+    {"Ballmaschine Frontmarker", Subjects::BALL_LAUNCHER_FRONT},
+    {"Abschusskopf Marker v2", Subjects::BALL_LAUNCHER_HEAD},
+    {"Eckteil 1", Subjects::TABLE_CORNER_1},
+    {"Eckteil 2", Subjects::TABLE_CORNER_2},
+    {"Eckteil 3", Subjects::TABLE_CORNER_3},
+    {"Eckteil 4", Subjects::TABLE_CORNER_4},
+    {"rll_led_stick", Subjects::LED_STICK},
+    {"pamy1_base", Subjects::ROBOT1_BASE},
+    {"pamy1_upper_arm", Subjects::ROBOT1_UPPER_ARM},
+    {"pamy1_racket", Subjects::ROBOT1_RACKET},
 };
 
 /**

@@ -21,7 +21,7 @@
             }
         },
         {
-            "key": "Marker_Arm",
+            "key": "pamy1_upper_arm",
             "value": {
                 "quality": 1.0169309067497045,
                 "is_visible": true,
@@ -53,7 +53,7 @@
             }
         },
         {
-            "key": "rll_muscle_base",
+            "key": "pamy1_base",
             "value": {
                 "quality": 0.5203557790301045,
                 "is_visible": true,
@@ -69,7 +69,7 @@
             }
         },
         {
-            "key": "rll_muscle_racket",
+            "key": "pamy1_racket",
             "value": {
                 "quality": 1.390444785802231,
                 "is_visible": true,

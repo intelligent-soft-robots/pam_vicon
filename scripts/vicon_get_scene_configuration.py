@@ -31,8 +31,8 @@ if t.TYPE_CHECKING:
 
 _subject_names = get_subject_names()
 
-ROBOT_BASE_SUBJECT = _subject_names[Subjects.MUSCLE_BASE]
-BALL_MACHINE_SUBJECT = _subject_names[Subjects.BALL_LAUNCHER]
+ROBOT_BASE_SUBJECT = _subject_names[Subjects.ROBOT1_BASE]
+BALL_MACHINE_SUBJECT = _subject_names[Subjects.BALL_LAUNCHER_FRONT]
 TABLE_CORNER_SUBJECTS = (
     _subject_names[Subjects.TABLE_CORNER_1],
     _subject_names[Subjects.TABLE_CORNER_2],

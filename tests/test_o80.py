@@ -55,9 +55,9 @@ def test_o80_basic() -> None:
 
     # check a few frames
 
-    assert vicon_frame.subjects[Subjects.MUSCLE_BASE].is_visible
+    assert vicon_frame.subjects[Subjects.ROBOT1_BASE].is_visible
     np.testing.assert_array_almost_equal(
-        vicon_frame.subjects[Subjects.MUSCLE_BASE].global_pose.matrix(),
+        vicon_frame.subjects[Subjects.ROBOT1_BASE].global_pose.matrix(),
         [
             [
                 0.8663438846138151,

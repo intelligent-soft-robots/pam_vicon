@@ -23,7 +23,7 @@ def main() -> None:
             obs = frontend.wait_for_next()
             vicon_frame = obs.get_extended_state()
 
-            robot_base = vicon_frame.subjects[Subjects.MUSCLE_BASE]
+            robot_base = vicon_frame.subjects[Subjects.ROBOT1_BASE]
 
             # convert pose to native Python class (makes it more convenient to use).
             robot_pose = Transformation.from_cpp(robot_base.global_pose)

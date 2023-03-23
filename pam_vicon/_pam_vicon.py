@@ -105,7 +105,7 @@ def get_table_pose(
 class PamVicon:
     """Wrapper around o80 FrontEnd to more easily access PAM Vicon data."""
 
-    _ROBOT_BASE_SUBJECT = pam_vicon.o80.Subjects.MUSCLE_BASE
+    _ROBOT_BASE_SUBJECT = pam_vicon.o80.Subjects.ROBOT1_BASE
     _TABLE_CORNER_SUBJECTS = (
         pam_vicon.o80.Subjects.TABLE_CORNER_1,
         pam_vicon.o80.Subjects.TABLE_CORNER_2,

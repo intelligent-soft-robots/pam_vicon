@@ -46,16 +46,17 @@ PYBIND11_MODULE(o80, m)
           &serialization_utils::from_json<pam_vicon::FixedSizeViconFrame>);
 
     py::enum_<pam_vicon::Subjects>(m, "Subjects")
-        .value("BALL_LAUNCHER", pam_vicon::Subjects::BALL_LAUNCHER)
         .value("PING_BASE", pam_vicon::Subjects::PING_BASE)
-        .value("ARM", pam_vicon::Subjects::ARM)
+        .value("BALL_LAUNCHER_FRONT", pam_vicon::Subjects::BALL_LAUNCHER_FRONT)
+        .value("BALL_LAUNCHER_HEAD", pam_vicon::Subjects::BALL_LAUNCHER_HEAD)
         .value("TABLE_CORNER_1", pam_vicon::Subjects::TABLE_CORNER_1)
         .value("TABLE_CORNER_2", pam_vicon::Subjects::TABLE_CORNER_2)
         .value("TABLE_CORNER_3", pam_vicon::Subjects::TABLE_CORNER_3)
         .value("TABLE_CORNER_4", pam_vicon::Subjects::TABLE_CORNER_4)
         .value("LED_STICK", pam_vicon::Subjects::LED_STICK)
-        .value("MUSCLE_BASE", pam_vicon::Subjects::MUSCLE_BASE)
-        .value("MUSCLE_RACKET", pam_vicon::Subjects::MUSCLE_RACKET);
+        .value("ROBOT1_BASE", pam_vicon::Subjects::ROBOT1_BASE)
+        .value("ROBOT1_UPPER_ARM", pam_vicon::Subjects::ROBOT1_UPPER_ARM)
+        .value("ROBOT1_RACKET", pam_vicon::Subjects::ROBOT1_RACKET);
 
     m.def("map_subject_name_to_index", &pam_vicon::map_subject_name_to_index);
     m.def("get_subject_names", &pam_vicon::get_subject_names);

@@ -26,7 +26,7 @@ look similar):
 .. code-block:: Python
 
    frame = frontend.latest().get_extended_state()
-   robot_base = frame.subjects[Subjects.MUSCLE_BASE]
+   robot_base = frame.subjects[Subjects.ROBOT1_BASE]
    print("Robot position: ", robot_base.global_pose.translation)
 
 
@@ -66,7 +66,7 @@ Example:
         TABLE_CORNER_3,
         TABLE_CORNER_4,
         LED_STICK,
-        MUSCLE_BASE,
+        ROBOT1_BASE,
     };
 
     const std::map<std::string, size_t> _subject_name_to_index = {
@@ -76,7 +76,7 @@ Example:
         {"TT Platte_Eckteil 3", TABLE_CORNER_3},
         {"TT Platte_Eckteil 4", TABLE_CORNER_4},
         {"rll_led_stick", LED_STICK},
-        {"rll_muscle_base", MUSCLE_BASE},
+        {"rll_muscle_base", ROBOT1_BASE},
     };
 
 
