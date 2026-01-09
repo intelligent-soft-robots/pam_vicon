@@ -56,7 +56,8 @@ PYBIND11_MODULE(o80, m)
         .value("LED_STICK", pam_vicon::Subjects::LED_STICK)
         .value("ROBOT1_BASE", pam_vicon::Subjects::ROBOT1_BASE)
         .value("ROBOT1_UPPER_ARM", pam_vicon::Subjects::ROBOT1_UPPER_ARM)
-        .value("ROBOT1_RACKET", pam_vicon::Subjects::ROBOT1_RACKET);
+        .value("ROBOT1_RACKET", pam_vicon::Subjects::ROBOT1_RACKET)
+        .value("CUP_BALL", pam_vicon::Subjects::CUP_BALL);
 
     m.def("map_subject_name_to_index", &pam_vicon::map_subject_name_to_index);
     m.def("get_subject_names", &pam_vicon::get_subject_names);
