@@ -19,7 +19,7 @@
 namespace pam_vicon
 {
 //! Number of subjects in the PAM Vicon setup.
-constexpr std::size_t NUM_SUBJECTS = 11;
+constexpr std::size_t NUM_SUBJECTS = 12;
 
 /**
  * @brief Enumeration of Vicon subjects.
@@ -39,7 +39,8 @@ enum Subjects
     LED_STICK,
     ROBOT1_BASE,
     ROBOT1_UPPER_ARM,
-    ROBOT1_RACKET
+    ROBOT1_RACKET,
+    ROBOT_GREEN_BASE,
 };
 
 //! Maps subject name to @ref Subjects entry.
@@ -55,7 +56,7 @@ const std::map<std::string, size_t> _subject_name_to_index = {
     {"pamy1_base", Subjects::ROBOT1_BASE},
     {"pamy1_upper_arm", Subjects::ROBOT1_UPPER_ARM},
     {"pamy1_racket", Subjects::ROBOT1_RACKET},
-};
+    {"pamy_green_base", Subjects::ROBOT_GREEN_BASE},
 
 /**
  * @brief Maps subject name to index.
