@@ -4,6 +4,7 @@
 Get data from Vicon server and print poses of robot, table and ball machine in JSON
 format.
 """
+
 import argparse
 import contextlib
 import functools

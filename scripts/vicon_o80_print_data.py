@@ -6,6 +6,7 @@ The back end is expected to be run in a separate process (e.g. by
 ``vicon_o80_standalone``) using the same segment ID.  It needs to be started before
 ``vicon_o80_print_data``.
 """
+
 import argparse
 import logging
 import sys
@@ -19,7 +20,6 @@ from pam_vicon.o80 import (
     Subjects,
     get_subject_names,
 )
-
 
 DEFAULT_SEGMENT_ID = "vicon"
 

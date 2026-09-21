@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 """Test functions/classes of the pam_vicon module."""
+
 import pathlib
 
 import pytest
@@ -16,7 +17,6 @@ from pam_vicon.o80 import (
 )
 
 import pam_vicon
-
 
 TABLE_LENGTH = 2.740
 TABLE_WIDTH = 1.525

@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 """Wrapper around PAM Vicon o80 front end."""
+
 import logging
 import typing as t
 

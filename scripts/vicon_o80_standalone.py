@@ -5,6 +5,7 @@
 This serves as backend to which a FrontEnd instance can connect by using the same
 segment ID.
 """
+
 import argparse
 import logging
 import pathlib
@@ -25,7 +26,6 @@ from pam_vicon.o80 import (
     start_standalone,
     stop_standalone,
 )
-
 
 DEFAULT_SEGMENT_ID = "vicon"
 DEFAULT_FREQUENCY = 300.0

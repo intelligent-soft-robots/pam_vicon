@@ -120,10 +120,12 @@ int main(int argc, char *argv[])
 
         logger->info("Loaded trajectory with {} steps.",
                      tennicam_points.cols());
-        logger->debug("tennicam points:\n{}\n",
-                      tennicam_points.transpose().format(matrix_list_fmt));
-        logger->debug("vicon points:\n{}\n",
-                      vicon_points.transpose().format(matrix_list_fmt));
+        logger->debug(
+            "tennicam points:\n{}\n",
+            fmt::streamed(tennicam_points.transpose().format(matrix_list_fmt)));
+        logger->debug(
+            "vicon points:\n{}\n",
+            fmt::streamed(vicon_points.transpose().format(matrix_list_fmt)));
 
         // compute transformation
         std::tie(tf, mean_error) =
@@ -137,7 +139,7 @@ int main(int argc, char *argv[])
     }
 
     logger->debug("Transformation matrix:\n{}\n",
-                  tf.matrix().format(matrix_list_fmt));
+                  fmt::streamed(tf.matrix().format(matrix_list_fmt)));
     logger->info("Mean error: {}", mean_error);
 
     // tennicam expects Euler angles in "extrinsic xyz" convention
@@ -146,10 +148,10 @@ int main(int argc, char *argv[])
     // print transform in the format used by tennicam_client's config.toml
     fmt::print("[transform]\n");
     fmt::print("translation = {}\n",
-               tennicam_tf.translation.format(vector_list_fmt));
+               fmt::streamed(tennicam_tf.translation.format(vector_list_fmt)));
     fmt::print("# extrinsic xyz Euler angles\n");
     fmt::print("rotation = {}\n",
-               tennicam_tf.euler_xyz.format(vector_list_fmt));
+               fmt::streamed(tennicam_tf.euler_xyz.format(vector_list_fmt)));
 
     return 0;
 }

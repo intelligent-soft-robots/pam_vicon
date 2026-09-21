@@ -1,6 +1,6 @@
 """Interface for the PAM Vicon system."""
-from ._pam_vicon import PamVicon, NoFrameDataError, get_table_pose
 
+from ._pam_vicon import PamVicon, NoFrameDataError, get_table_pose
 
 DEFAULT_ORIGIN_SUBJECT = "Pamy_ceiling"
 """Name of the default origin subject in the table tennis lab.
