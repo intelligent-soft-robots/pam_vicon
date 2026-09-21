@@ -6,6 +6,7 @@ An o80 back end is expected to be run in a separate process (e.g. by
 ``vicon_o80_standalone``) using the same segment ID.  It needs to be started before
 initialising PamVicon.
 """
+
 from pam_vicon import PamVicon
 
 

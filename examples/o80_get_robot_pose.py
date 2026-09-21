@@ -6,6 +6,7 @@ The back end is expected to be run in a separate process (e.g. by
 ``vicon_o80_standalone``) using the same segment ID.  It needs to be started before
 initialising the front end.
 """
+
 import contextlib
 import signal_handler
 from spatial_transformation import Transformation

@@ -23,6 +23,7 @@ values
 - "vicon_position:": Position [x, y, z] of the LED stick as detected by tennicam.
 - "vicon_timestamp": Timestamp of the Vicon position.
 """
+
 import argparse
 import contextlib
 import logging
