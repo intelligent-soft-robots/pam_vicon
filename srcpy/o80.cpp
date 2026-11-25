@@ -57,7 +57,11 @@ PYBIND11_MODULE(o80, m)
         .value("ROBOT1_BASE", pam_vicon::Subjects::ROBOT1_BASE)
         .value("ROBOT1_UPPER_ARM", pam_vicon::Subjects::ROBOT1_UPPER_ARM)
         .value("ROBOT1_RACKET", pam_vicon::Subjects::ROBOT1_RACKET)
-        .value("ROBOT_GREEN_BASE", pam_vicon::Subjects::ROBOT_GREEN_BASE);
+        .value("ROBOT_GREEN_BASE", pam_vicon::Subjects::ROBOT_GREEN_BASE)
+        .value("ROBOT_BLUE_BASE", pam_vicon::Subjects::ROBOT_BLUE_BASE)
+        .value("ROBOT_BLACK_BASE", pam_vicon::Subjects::ROBOT_BLACK_BASE)
+        .value("ROBOT_WHITE_BASE", pam_vicon::Subjects::ROBOT_WHITE_BASE)
+        .value("ROBOT_YELLOW_BASE", pam_vicon::Subjects::ROBOT_YELLOW_BASE);
 
     m.def("map_subject_name_to_index", &pam_vicon::map_subject_name_to_index);
     m.def("get_subject_names", &pam_vicon::get_subject_names);
